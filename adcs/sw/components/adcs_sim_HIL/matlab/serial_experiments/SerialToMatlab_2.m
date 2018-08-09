@@ -12,11 +12,12 @@
 instrreset;
 
 % Whatever port the uart2serial adapter is connected to
-s = serial('COM8');
+s = serial('COM5');
 s.InputBufferSize = 100;
 fopen(s);
 s
 s.ReadAsyncMode = 'continuous';
+s.Terminator = '';
 
 
 % Persists between method calls in case of no update in data
