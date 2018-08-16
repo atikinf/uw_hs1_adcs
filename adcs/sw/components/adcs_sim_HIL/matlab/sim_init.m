@@ -34,13 +34,12 @@ fsw_params              = init_fsw_params();
 fsw_params.bdot         = init_bdot_controller(fsw_params);
 
 % (toSat) Load sim and set params
-run_time    = 360;
+run_time    = 604800;
 mdl         = 'adcs_sim_main1';
 load_system(mdl);
 set_param(mdl,'StopTime', num2str(run_time));
 
-% (fromSat) clean up COM8
-s = serial('COM8');
-fclose(s);
-delete(s);
+% fromSat DAQ init
+
+% (fromSat) clean up
 instrreset;
